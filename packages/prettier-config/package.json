@@ -1,5 +1,5 @@
 {
-  "name": "@student-cms/prettier-config",
+  "name": "@deshop/prettier-config",
   "version": "0.1.0",
   "type": "module",
   "exports": "./index.js",

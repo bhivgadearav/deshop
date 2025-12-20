@@ -1,0 +1,17 @@
+{
+  "name": "indexer",
+  "module": "src/index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@deshop/typescript-config": "workspace:*",
+    "@deshop/prettier-config": "workspace:*",
+    "@deshop/eslint-config": "workspace:*"
+  }
+}

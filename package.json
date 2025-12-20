@@ -1,5 +1,5 @@
 {
-  "name": "student-cms",
+  "name": "deshop",
   "private": true,
   "scripts": {
     "build": "turbo run build",

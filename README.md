@@ -1,135 +1,31 @@
-# Turborepo starter
+## DeShop: Decentralized Shop
+DeShop is shopify for digital products but going even further to make receiving payments even more accessible using CINR (Crypto Indian Rupees) which is cryptocurrency on the Solana blockchain pegged to real INR.
 
-This Turborepo starter is maintained by the Turborepo core team.
+### Modules
+1. CINR (Crypto Indian Rupees) Payments - Customers can pay the sellers using CINR one-time or on a subscription basis. Sellers receive payments on their assigned PDA address. Sellers can claim their accumulated revenue from deshop's solana program every month but deshop will tak 10% fees on every claim.
 
-## Using this example
+2. Escrow + Conditional Release - Payment goes into a program-controlled PDA escrow; funds are released to seller when buyer confirms delivery or after a timeout. Disputes can be escalated.
 
-Run the following command:
+3. Store Management - Sellers can add products individually or in bulk in csv format.
 
-```sh
-npx create-turbo@latest
-```
+4. Store Customization - Sellers can customize their stores in various ways like theme, logo, font etc.
 
-## What's inside?
+5. Store Discovery - Customers can discover sellers and their stores. Compare similar products between sellers to make a responsible decision before purchasing.
 
-This Turborepo includes the following packages/apps:
+6. Product Licensing/Access Control - Whenever a customer buys a product a relevant NFT is minted to his wallet which is the proof of his purchase. This NFT is used for accessing/downloading/using the product he purchased.
 
-### Apps and Packages
+7. Decentralized Dispute Resolution - Buyers can open disputes; a governance token (DESHOP GOV) holder vote resolves it and authorizes refund.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
-```
-
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+### Tech Stack - TypeScript Focused
+1. Package Manager - Bun
+2. Codebase - Turborepo
+3. Frontend - Next.js, Tailwind CSS, lucide-react, shadcn/ui, Motion For React, Tanstack React Query, Jotai, Zod, Axios
+4. Backend - Express.js, Zod, Prisma, Passport.js, tRPC, ioredis, express-rate-limit, cors, helmet
+5. Database - PostgreSQL
+6. Caching - Redis
+7. Indexer - TypeScript
+8. Blockchain - @solana/web3.js, anza-xyz/wallet-adapter
+9. Solana Program - Rust, Anchor
+10. Containerization - Docker
+11. CI/CD - GitHub Actions
+12. Linting & Formatting — ESLint + Prettier + TypeScript strictness rules
