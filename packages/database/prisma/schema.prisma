@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id    Int     @id @default(autoincrement())
+  storeId Int
+  category String
+  name  String
+  description  String
+  image String
+  deliverables String
+  seller String
+  price Int
+  purchases Int
+}
+
+model Review {
+  id    Int     @id @default(autoincrement())
+  productId Int
+  comment String
+  rating Int
+  reviewer String
+}
+
+model Store {
+  id    Int     @id @default(autoincrement())
+  seller String
+
+  name String
+  description String
+
+  logo String
+  logoText String
+  logoTextFont String
+  logoTextFontSize String
+  logoTextStyle String
+
+  headerLayout String
+
+  heroTitle String
+  heroTitleColor String
+  heroTitleFont String
+  heroTitleFontSize String
+  heroTitleStyle String
+
+  heroDescription String
+  heroDescriptionColor String
+  heroDescriptionFont String
+  heroDescriptionFontSize String
+  heroDescriptionStyle String
+
+  heroHeight Int
+  heroBackgroundColor String
+  heroBackgroundRadius String
+  heroBackgroundStyle String
+  heroCover String
+
+  primaryColor String
+  secondaryColor String
+  accentColor String
+  backgroundColor String
+
+  headingFont String
+  bodyFont String
+
+  buttonShape String
+  buttonStyle String
+
+  productGridRows Int
+  productGridColumns Int
+
+  contentSpacing Int
+  cardBorderRadius Int
+  cardShadow String
+
+  categories Int
+}
+
+model Category {
+  id    Int     @id @default(autoincrement())
+  storeId Int
+  name String
+}
+
+model User {
+  wallet    String     @id
+  name String
+  photo String
+  gender String
+  bio String
+  location String
+  email String
+  phone String
+  instagram String
+  facebook String
+  x String
+  linkedin String
+  whatsapp String
+}
